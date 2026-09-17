@@ -1,22 +1,18 @@
-
-
-
-
-
+// src/components/Contact.jsx
 ```jsx
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const SERVICE_ID = "service_76v033d";
-const TEMPLATE_ID = "template_ph3ssgj";
-const PUBLIC_KEY = "4Tb7n9lai4OarLhzP";
-
-export default function Contact() {
-  const form = useRef(null);
+function Contact() {
+  const form = useRef();
   const [status, setStatus] = useState("");
 
-  const sendEmail = async (event) => {
-    event.preventDefault();
+  const SERVICE_ID = "service_76v033d";
+  const TEMPLATE_ID = "template_ph3ssgj";
+  const PUBLIC_KEY = "4Tb7n9lai4OarLhzP";
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
     setStatus("sending");
 
     try {
@@ -67,7 +63,9 @@ export default function Contact() {
 
               <div>
                 <span>Phone</span>
-                <a href="tel:+254702732396">+254 702732396</a>
+                <a href="tel:+254702732396">
+                  +254 702732396
+                </a>
               </div>
             </div>
 
@@ -99,10 +97,15 @@ export default function Contact() {
             </div>
           </div>
 
-          <form ref={form} className="contact-form" onSubmit={sendEmail}>
+          <form
+            ref={form}
+            className="contact-form"
+            onSubmit={sendEmail}
+          >
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
+
                 <input
                   type="text"
                   id="name"
@@ -114,6 +117,7 @@ export default function Contact() {
 
               <div className="form-group">
                 <label htmlFor="email">Your Email</label>
+
                 <input
                   type="email"
                   id="email"
@@ -126,6 +130,7 @@ export default function Contact() {
 
             <div className="form-group">
               <label htmlFor="title">Subject</label>
+
               <input
                 type="text"
                 id="title"
@@ -137,6 +142,7 @@ export default function Contact() {
 
             <div className="form-group">
               <label htmlFor="message">Message</label>
+
               <textarea
                 id="message"
                 name="message"
@@ -151,7 +157,9 @@ export default function Contact() {
               className="contact-button"
               disabled={status === "sending"}
             >
-              {status === "sending" ? "Sending..." : "Send Message ↗"}
+              {status === "sending"
+                ? "Sending..."
+                : "Send Message ↗"}
             </button>
 
             {status === "success" && (
@@ -170,10 +178,13 @@ export default function Contact() {
 
         <div className="contact-footer">
           <p>© 2026 Johnstone Oroni. Built with React.</p>
+
           <a href="#home">Back to top ↑</a>
         </div>
       </div>
     </section>
   );
 }
-```
+
+export default Contact;
+```;
