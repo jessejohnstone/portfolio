@@ -1,17 +1,11 @@
-
-
-
-
-
-jsx
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const SERVICE_ID = "service_76v033d";
+const SERVICE_ID = "service_fmodn8i";
 const TEMPLATE_ID = "template_ph3ssgj";
 const PUBLIC_KEY = "4Tb7n9lai4OarLhzP";
 
-export default function Contact() {
+export default function ContactPage() {
   const form = useRef(null);
   const [status, setStatus] = useState("");
 
@@ -37,11 +31,9 @@ export default function Contact() {
       <div className="section-container">
         <div className="contact-heading">
           <p>Let's connect</p>
-
           <h2>
             Let's Build Something <span>Great</span>
           </h2>
-
           <p className="contact-intro">
             I'm open to internship opportunities, junior developer roles,
             freelance projects and collaborations. If you have an idea or
@@ -53,7 +45,6 @@ export default function Contact() {
           <div className="contact-info">
             <div className="contact-card">
               <div className="contact-icon">@</div>
-
               <div>
                 <span>Email</span>
                 <a href="mailto:jessejohnstone203@gmail.com">
@@ -64,7 +55,6 @@ export default function Contact() {
 
             <div className="contact-card">
               <div className="contact-icon">☎</div>
-
               <div>
                 <span>Phone</span>
                 <a href="tel:+254702732396">+254 702732396</a>
@@ -73,7 +63,6 @@ export default function Contact() {
 
             <div className="contact-card">
               <div className="contact-icon">⌖</div>
-
               <div>
                 <span>Location</span>
                 <p>Kenya</p>
@@ -81,19 +70,10 @@ export default function Contact() {
             </div>
 
             <div className="contact-socials">
-              <a
-                href="https://github.com/jessejohnstone"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://github.com/jessejohnstone" target="_blank" rel="noreferrer">
                 GitHub ↗
               </a>
-
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer">
                 LinkedIn ↗
               </a>
             </div>
@@ -103,67 +83,35 @@ export default function Contact() {
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="John Doe"
-                  required
-                />
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
               </div>
 
               <div className="form-group">
                 <label htmlFor="email">Your Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="john@example.com"
-                  required
-                />
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
               </div>
             </div>
 
             <div className="form-group">
               <label htmlFor="title">Subject</label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                placeholder="Let's work together"
-                required
-              />
+              <input type="text" id="title" name="title" placeholder="Let's work together" required />
             </div>
 
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Tell me about your project or opportunity..."
-                required
-              ></textarea>
+              <textarea id="message" name="message" rows="6" placeholder="Tell me about your project or opportunity..." required></textarea>
             </div>
 
-            <button
-              type="submit"
-              className="contact-button"
-              disabled={status === "sending"}
-            >
+            <button type="submit" className="contact-button" disabled={status === "sending"}>
               {status === "sending" ? "Sending..." : "Send Message ↗"}
             </button>
 
             {status === "success" && (
-              <p className="form-success">
-                ✓ Message sent successfully. I'll get back to you soon.
-              </p>
+              <p className="form-success">✓ Message sent successfully. I'll get back to you soon.</p>
             )}
 
             {status === "error" && (
-              <p className="form-error">
-                ✕ Something went wrong. Please try again.
-              </p>
+              <p className="form-error">✕ Something went wrong. Please try again.</p>
             )}
           </form>
         </div>
@@ -176,4 +124,3 @@ export default function Contact() {
     </section>
   );
 }
-
