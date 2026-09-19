@@ -5,7 +5,6 @@ function Hero() {
       <div className="hero-container">
 
         <div className="hero-content">
-
           <p className="hero-greeting">
             Hello, I'm
           </p>
@@ -35,20 +34,30 @@ function Hero() {
           </div>
 
           <div className="hero-socials">
-            <a href="https://github.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/jessejohnstone"
+              target="_blank"
+              rel="noreferrer"
+            >
               GitHub
             </a>
 
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               LinkedIn
             </a>
           </div>
-
         </div>
 
         <div className="hero-image">
-          <div className="hero-image-placeholder">
-            <span>JO</span>
+          <div className="hero-image-wrapper">
+            <img
+              src="/profile.jpg"
+              alt="Johnstone Oroni"
+            />
           </div>
         </div>
 
