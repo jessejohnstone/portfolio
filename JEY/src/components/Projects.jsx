@@ -1,4 +1,6 @@
 
+import Reveal from "./Reveal";
+
 const projects = [
   {
     number: "01",
@@ -54,61 +56,48 @@ function Projects() {
 
         <div className="projects-list">
           {projects.map((project) => (
-            <article className="project-card" key={project.number}>
-
-              <div className="project-top">
-                <span className="project-number">
-                  {project.number}
-                </span>
-
-                <span className="project-status">
-                  {project.status}
-                </span>
-              </div>
-
-              <div className="project-content">
-                <p className="project-category">
-                  {project.category}
-                </p>
-
-                <h3>{project.title}</h3>
-
-                <p className="project-description">
-                  {project.description}
-                </p>
-
-                <div className="project-technologies">
-                  {project.technologies.map((technology) => (
-                    <span key={technology}>
-                      {technology}
-                    </span>
-                  ))}
+            <Reveal key={project.number}>
+              <article className="project-card">
+                <div className="project-top">
+                  <span className="project-number">{project.number}</span>
+                  <span className="project-status">{project.status}</span>
                 </div>
 
-                <div className="project-actions">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="project-link"
-                  >
-                    GitHub ↗
-                  </a>
+                <div className="project-content">
+                  <p className="project-category">{project.category}</p>
+                  <h3>{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
 
-                  {project.demo !== "#" && (
+                  <div className="project-technologies">
+                    {project.technologies.map((technology) => (
+                      <span key={technology}>{technology}</span>
+                    ))}
+                  </div>
+
+                  <div className="project-actions">
                     <a
-                      href={project.demo}
+                      href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="project-link project-demo"
+                      className="project-link"
                     >
-                      Live Demo ↗
+                      GitHub ↗
                     </a>
-                  )}
-                </div>
-              </div>
 
-            </article>
+                    {project.demo !== "#" && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-link project-demo"
+                      >
+                        Live Demo ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            </Reveal>
           ))}
         </div>
 

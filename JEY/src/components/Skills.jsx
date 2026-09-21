@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const skillCategories = [
   {
     title: "Frontend",
@@ -39,30 +41,23 @@ function Skills() {
           </p>
         </div>
 
+     
         <div className="skills-grid">
-
           {skillCategories.map((category, index) => (
-            <div className="skill-card" key={category.title}>
+            <Reveal key={category.title}>
+              <div className="skill-card">
+                <div className="skill-number">0{index + 1}</div>
+                <h3>{category.title}</h3>
+                <p>{category.description}</p>
 
-              <div className="skill-number">
-                0{index + 1}
+                <div className="skill-list">
+                  {category.skills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
               </div>
-
-              <h3>{category.title}</h3>
-
-              <p>{category.description}</p>
-
-              <div className="skill-list">
-                {category.skills.map((skill) => (
-                  <span key={skill}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-            </div>
+            </Reveal>
           ))}
-
         </div>
 
       </div>

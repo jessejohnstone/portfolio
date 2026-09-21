@@ -1,3 +1,5 @@
+
+
 import { useState } from "react";
 
 function Navbar() {
@@ -30,7 +32,11 @@ function Navbar() {
             </a>
           ))}
 
-          <a href="#contact" className="nav-button">
+          <a
+            href="#contact"
+            className="nav-button"
+            onClick={() => setMenuOpen(false)}
+          >
             Let's Talk
           </a>
         </div>
@@ -39,8 +45,9 @@ function Navbar() {
           className="menu-button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
         >
-          ☰
+          {menuOpen ? "✕" : "☰"}
         </button>
 
       </div>
