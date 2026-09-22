@@ -1175,3 +1175,15 @@ section {
 .menu-button:hover {
   color: #00ff88;
 }
+.navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.menu-button {
+  transition: 0.3s ease;
+}
+
+.menu-button:hover {
+  color: #00ff88;
+}
